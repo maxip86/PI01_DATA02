@@ -285,9 +285,11 @@ LIMIT 1;
     
 
 #- Nombre del circuito más corrido --------------------------------------------------------------------------------------------------
-SELECT `circuitId`, `name`, count(*)
-FROM races
-GROUP BY `circuitId`
+SELECT r.circuitId, c.`name`, count(*)
+FROM races r
+	JOIN circuitos c
+    ON ( r.circuitId = c.circuitId)
+GROUP BY r.circuitId
 ORDER BY 3 DESC
 LIMIT 1;
 

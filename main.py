@@ -15,7 +15,7 @@ datos2 = cursor.fetchone()
 rta2 = datos2[0:2]
 rta2
 
-consulta3 = "SELECT `circuitId`, `name`, count(*) FROM races GROUP BY `circuitId` ORDER BY 3 DESC LIMIT 1;"
+consulta3 = "SELECT r.circuitId, c.`name`, count(*) FROM races r JOIN circuitos c ON ( r.circuitId = c.circuitId) GROUP BY r.circuitId ORDER BY 3 DESC LIMIT 1;"
 cursor.execute(consulta3)
 datos3 = cursor.fetchone()
 rta3 = datos3[1]
