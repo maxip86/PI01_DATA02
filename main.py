@@ -1,7 +1,4 @@
-#import dbm
 from fastapi import FastAPI
-#from pydantic import BaseModel
-# from typing import Union
 import pymysql
 
 db = pymysql.connect(host= "localhost", database="PI01", user="root", passwd= "MySQL1234" )
